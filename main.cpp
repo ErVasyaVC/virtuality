@@ -8,7 +8,8 @@ void Demo(Number& n1, Number& n2, Number& n3)
     cout << "n1 = "; n1.Output();
     cout << "n2 = "; n2.Output();
 
-    n3.Assg(n1.Add (n2));
+    n1.Add (n2);
+    n3.Assg(n1);
     cout << "n1 + n2 = "; n3.Output(); cout << "("<< d1 + d2 << ")" << endl;
 
 

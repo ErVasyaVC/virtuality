@@ -30,7 +30,6 @@ Number Fraction::Assg(const Number& n) {
 }
 Number Fraction::Add(const Number& n) {
     const Fraction& other = dynamic_cast<const Fraction&>(n);
-    Fraction output(number, fractional);
     number += other.number;
     int resultFract;
     if(lenFract > other.lenFract){
