@@ -1,5 +1,6 @@
 #include <typeinfo>
 #include "Fraction.h"
+#include <math.h>
 void Demo(Number& n1, Number& n2, Number& n3)
 {
     double d1, d2, d3;
@@ -27,16 +28,7 @@ int main()
     Number n1(25), n2(7), n3;
     Demo(n1, n2, n3);
     Fraction f1, f2(2, 8), f3(5, 34);
-
-    f1.Output();
-    f2.Output();
-    n1.Assg(f2.Add(f3));
-    f1.Assg(f2);
-    f2.Output();
-    f3.Output();
-    n1.Output();
-
-
+    Demo(f1, f2, f3);
 
     return 0;
 }

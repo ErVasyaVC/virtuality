@@ -17,9 +17,7 @@ public:
     bool NEq   (const Number& n) override; // *this != n
     bool More  (const Number& n) override; // *this > n
     bool Less  (const Number& n) override; // *this < n
-//    void Input () override; // cin >> *this
+    void Input () override; // cin >> *this
     void Output() override; // cout << *this
-//    void FromStream (ifstream stream) override; // stream >> *this
-//    void ToStream   (ofstream stream) override; // stream << *this
-//    double Asdouble () override; // *this -> double
+    double Asdouble () override; // *this -> double
 };

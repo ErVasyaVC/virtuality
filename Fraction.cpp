@@ -68,7 +68,7 @@ bool Fraction::Eq    (const Number& n){
 
 bool Fraction::NEq   (const Number& n){
     const Fraction& other = dynamic_cast<const Fraction&>(n);
-    if(this->number != other.number){
+    if(this->number != other.number || this->fractional != other.fractional){
         return true;
     } else{
         return false;
@@ -77,7 +77,7 @@ bool Fraction::NEq   (const Number& n){
 
 bool Fraction::More  (const Number& n){
     const Fraction& other = dynamic_cast<const Fraction&>(n);
-    if(this->number > other.number){
+    if(this->number > other.number || (this->number == other.number && this->fractional > other.fractional*pow(10, lenFract-other.lenFract))){
         return true;
     } else{
         return false;
@@ -86,7 +86,7 @@ bool Fraction::More  (const Number& n){
 
 bool Fraction::Less  (const Number& n){
     const Fraction& other = dynamic_cast<const Fraction&>(n);
-    if(this->number < other.number){
+    if(this->number < other.number || (this->number == other.number && this->fractional < other.fractional*pow(10, lenFract-other.lenFract))){
         return true;
     } else{
         return false;
@@ -94,9 +94,24 @@ bool Fraction::Less  (const Number& n){
 } // *this < n
 
 
-//void Fraction::Input(){
-//
-//}// cin >> *this
+void Fraction::Input(){
+    double fpart;
+    double ipart = 0;
+    cin >> fpart;
+    fractional = modf(1.0*fpart, &ipart);
+    number = ipart;
+    int fractionalPart = fractional;
+    lenFract = 0;
+    while (fractionalPart >0){
+        fractionalPart /= 10;
+        ++lenFract;
+    }
+    if(fractional == 0){
+        lenFract = 1;
+    }
+
+
+}// cin >> *this
 
 
 void Fraction::Output(){

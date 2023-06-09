@@ -23,8 +23,6 @@ public:
     virtual bool Less  (const Number& n); // *this < n
     virtual void Input (); // cin >> *this
     virtual void Output(); // cout << *this
-//    virtual void FromStream (ifstream stream); // stream >> *this
-//    virtual void ToStream   (ofstream stream); // stream << *this
     virtual double Asdouble (); // *this -> double
 };
 #endif //VIRTUAL_NUMBER_H
